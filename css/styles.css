@@ -1,7 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Roboto, sans-serif;
   color: #434455;
   background-color: #ffffff;
+  margin: 0;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 a {
@@ -11,6 +39,39 @@ a {
 ul,
 ol {
   list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e7e9fc;
+}
+
+.navigation {
+  display: flex;
+  margin-right: auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 24px 0 24px;
 }
 
 .logo {
@@ -21,6 +82,11 @@ ol {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+  margin-right: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0px;
 }
 
 .logo-accent {
@@ -51,8 +117,13 @@ address {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-
   color: #434455;
+}
+
+.address-list {
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
 .address:hover,
@@ -64,6 +135,15 @@ address {
   background-color: #2e2f42;
 }
 
+.hero-wrap {
+  display: flex;
+  padding: 188px 331px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  justify-content: space-between;
+}
+
 .hero-title {
   font-weight: 700;
   font-size: 56px;
@@ -71,6 +151,7 @@ address {
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
+  width: 100%;
 }
 
 .hero-btn {
@@ -81,11 +162,26 @@ address {
   cursor: pointer;
   color: #fff;
   background: #4d5ae5;
+  border-radius: 4px;
+  padding: 16px 32px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
   background: #404bbf;
+}
+
+.desk-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.desk-list {
+  flex-basis: calc((100% - 3 * 24px) / 4);
 }
 
 .desc-title-base {
@@ -94,6 +190,19 @@ address {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .desc-text {
@@ -106,6 +215,11 @@ address {
   background: #f4f4fd;
 }
 
+.team-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .team-title {
   font-weight: 700;
   font-size: 36px;
@@ -114,10 +228,34 @@ address {
   text-align: center;
   text-transform: capitalize;
   color: #2e2f42;
+  margin-bottom: 72px;
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .team-box {
   background: #fff;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  border-radius: 0 0 4px 4px;
+}
+
+.team-picture {
+  object-fit: cover;
+}
+
+.team-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 16px;
+  flex-basis: calc((100% - 8px) / 2);
 }
 
 .team-subtitle {
@@ -136,6 +274,11 @@ address {
   text-align: center;
 }
 
+.portfolio-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .portfolio-title {
   font-weight: 700;
   font-size: 36px;
@@ -144,6 +287,35 @@ address {
   text-align: center;
   text-transform: capitalize;
   color: #2e2f42;
+  margin-bottom: 72px;
+}
+
+.portfolio-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+}
+
+.portfolio-item {
+  flex-basis: calc((100% - 2 * 24px) / 3);
+}
+
+.portfolio-item img {
+  object-fit: cover;
+}
+
+.portfolio-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 16px;
+  border-bottom: 1px solid #e7e9fc;
+  border-left: 1px solid #e7e9fc;
+  border-right: 1px solid #e7e9fc;
 }
 
 .portfolio-subtitle {
@@ -162,6 +334,19 @@ address {
 
 footer {
   background: #2e2f42;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px 864px 100px 0;
+}
+
+.footer-content a {
+  margin: 0;
 }
 
 .logo-accent-footer {
